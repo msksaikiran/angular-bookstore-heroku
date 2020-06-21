@@ -149,6 +149,8 @@ import { LoginComponent } from "./components/login/login.component";
     HttpClientModule,
   ],
   providers: [],
+  exports: [LoginComponent],
+  entryComponents: [LoginComponent],
   bootstrap: [AppComponent],
   //providers: [BooksComponent],
   // exports: [AddbookComponent, UpdatebookComponent, LoginComponent],
