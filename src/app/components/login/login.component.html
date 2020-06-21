@@ -52,19 +52,10 @@
       </button>
       <br />
       <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="108px">
-        <button
-          mat-button
-          color="primary"
-          class="btn-block2"
-          routerLink="/register"
-        >
+        <button mat-button color="primary" class="btn-block2">
           Sign Up
         </button>
-        <button
-          mat-button
-          [disabled]="email.invalid || password.invalid"
-          (click)="onlogin()"
-        >
+        <button mat-button [disabled]="email.invalid || password.invalid">
           Sign in
         </button>
       </div>
