@@ -30,6 +30,7 @@ import { MatDialogRef } from "@angular/material";
 import { ActivatedRoute, Router } from "@angular/router";
 import { NgxSpinnerService } from "ngx-spinner";
 import { HttpService } from "src/app/service/http.service";
+
 //import { DataService } from "src/app/service/data.service";
 
 @Component({
@@ -61,7 +62,7 @@ export class LoginComponent implements OnInit {
     private snackBar: MatSnackBar,
     public formBuilder: FormBuilder,
     private spinner: NgxSpinnerService,
-    private httpservice: HttpService,
+    //private httpservice: HttpService,
     //private route: ActivatedRoute,
     private router: Router //public dialogRef: MatDialogRef<LoginComponent> //private data: DataService // @Inject(MAT_DIALOG_DATA) public data: any
   ) {}
@@ -92,8 +93,9 @@ export class LoginComponent implements OnInit {
   seasons = ["user", "seller", "admin"];
   isDisabled: boolean = true;
   onlogin() {
-    this.spinner.show();
-    this.showSpinner = true;
+    this.router.navigate(["books"]);
+    // this.spinner.show();
+    // this.showSpinner = true;
     // setTimeout(() => {
     //   this.spinner.hide();
     // this.httpservice

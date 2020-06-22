@@ -75,7 +75,12 @@ import { MatSelectModule } from "@angular/material/select";
 import { MatDialogModule } from "@angular/material/dialog";
 import { LoginComponent } from "./components/login/login.component";
 import { BooksComponent } from "./components/books/books.component";
-import { CookieService, CookieOptions } from "angular2-cookie/core";
+//import { CookieService, CookieOptions } from "angular2-cookie/core";
+import {
+  BaseCookieOptions,
+  CookieService,
+  CookieOptions,
+} from "angular2-cookie/core";
 // import { AddbookComponent } from "./components/addbook/addbook.component";
 // import { SellerbooksComponent } from "./components/sellerbooks/sellerbooks.component";
 // import { UpdatebookComponent } from "./components/updatebook/updatebook.component";
@@ -152,7 +157,7 @@ import { CookieService, CookieOptions } from "angular2-cookie/core";
     HttpClientModule,
   ],
 
-  providers: [{ provide: CookieService, useFactory: cookieServiceFactory }],
+  providers: [{ provide: CookieOptions, useClass: BaseCookieOptions }],
   exports: [LoginComponent],
   entryComponents: [LoginComponent],
   bootstrap: [AppComponent],
@@ -166,6 +171,6 @@ import { CookieService, CookieOptions } from "angular2-cookie/core";
   // ],
 })
 export class AppModule {}
-export function cookieServiceFactory() {
-  return new CookieService();
-}
+// export function cookieServiceFactory() {
+//   return new CookieService();
+// }
