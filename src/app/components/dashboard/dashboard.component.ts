@@ -2,6 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { NgxSpinnerService } from "ngx-spinner";
 import { MatDialog, MatSnackBar } from "@angular/material";
+import { MatBadgeModule } from "@angular/material/badge";
+import { LoginComponent } from "../login/login.component";
 
 @Component({
   selector: "app-dashboard",
@@ -57,7 +59,7 @@ export class DashboardComponent implements OnInit {
       if (localStorage.getItem("token") != null) {
         this.router.navigate(["books/viewcart"]);
       } else {
-        // const dialogRef = this.dialog.open(LoginComponent);
+        const dialogRef = this.dialog.open(LoginComponent);
         // dialogRef.afterClosed().subscribe((result) => {
         //   window.location.reload();
         // });
