@@ -13,8 +13,8 @@
           </mat-icon>
         </a>
       </div>
-      <div style="height: 40%; margin-left: -3%;" fxHide fxShow.lt-md>
-        <a (click)="onBook()" class="bookicon">
+      <div style="height: 40%; margin-left: -5%;" fxHide fxShow.lt-md>
+        <a (click)="onBook()">
           <mat-icon color="primary" class="grab">
             <img class="bookimg" src="assets/images/education@2x.png" />
           </mat-icon>
@@ -40,7 +40,7 @@
       </div>
 
       <!-------------------- cart -------------------->
-      <div fxLayout="row" fxLayoutAlign="start end" style="margin-left: 20%;">
+      <div fxLayout="row" fxLayoutAlign="start end" style="margin-left: 18%;">
         <div class="carttext" (click)="onCart()" fxhide="10" fxHide.xs="true">
           Cart
         </div>
@@ -63,6 +63,22 @@
         </button>
 
         <button
+          *ngIf="!profilepic"
+          mat-icon-button
+          style="
+            margin-left: 4%;
+            width: 40px;
+            height: 40px;
+            background-color: whitesmoke;
+          "
+          fxHide
+          fxShow.lt-md
+          [matMenuTriggerFor]="beforeMenu"
+        >
+          <mat-icon>perm_identity</mat-icon>
+        </button>
+
+        <button
           *ngIf="profilepic"
           mat-icon-button
           fxShow="true"
@@ -74,7 +90,20 @@
         >
           <img class="profile" src="{{ profile }}" />
         </button>
-
+        <!--------------- app ---------------->
+        <button
+          *ngIf="profilepic"
+          mat-icon-button
+          class="apps"
+          [matMenuTriggerFor]="beforeMenu"
+          fxHide
+          fxShow.lt-md
+        >
+          <img class="profile" src="{{ profile }}" />
+          <!-- <mat-icon matTooltip="appearance" [ngStyle]="{ color: 'white' }"
+            >apps</mat-icon
+          > -->
+        </button>
         <mat-menu #beforeMenu="matMenu" xPosition="before">
           <div style="width: 200px;">
             <button
@@ -130,73 +159,6 @@
             <!-- </label> -->
           </div>
         </mat-menu>
-        <!--------------- app ---------------->
-        <button
-          mat-icon-button
-          class="apps"
-          [matMenuTriggerFor]="menu"
-          fxHide
-          fxShow.lt-md
-        >
-          <mat-icon matTooltip="appearance" [ngStyle]="{ color: 'white' }"
-            >apps</mat-icon
-          >
-          <mat-menu #menu="matMenu">
-            <div style="width: 200px;">
-              <button
-                mat-menu-item
-                [disabled]="!visible"
-                style="text-align: center;"
-                (click)="onOrderDetails()"
-              >
-                My Orders
-              </button>
-              <button
-                mat-menu-item
-                [disabled]="!visible"
-                style="text-align: center;"
-                (click)="onwhishlist()"
-              >
-                My WishList
-              </button>
-              <div *ngIf="!visible">
-                <button
-                  mat-menu-item
-                  style="text-align: center;"
-                  (click)="onLogin()"
-                >
-                  Login
-                </button>
-              </div>
-              <button
-                mat-menu-item
-                [disabled]="!visible"
-                style="text-align: center;"
-                (click)="onLogout()"
-              >
-                Logout
-              </button>
-
-              <!-- <label> -->
-              <button
-                [disabled]="!visible"
-                value="uploadProfile"
-                class="uploadimage"
-                (click)="fileInput.click($event)"
-              >
-                Upload Profile
-                <input
-                  style="display: none;"
-                  #fileInput
-                  type="file"
-                  name="fileupload"
-                  (change)="fileChange($event)"
-                />
-              </button>
-              <!-- </label> -->
-            </div>
-          </mat-menu>
-        </button>
       </div>
     </mat-toolbar-row>
   </mat-toolbar>

@@ -33,6 +33,7 @@ import { MatDialogModule } from "@angular/material/dialog";
 import { LoginComponent } from "./components/login/login.component";
 import { BooksComponent } from "./components/books/books.component";
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ViewcartComponent } from './components/viewcart/viewcart.component';
 // import { RegisterComponent } from "./components/register/register.component";
 // import { FooterComponent } from "./components/footer/footer.component";
 //import { RatingComponent } from "./components/rating/rating.component";
@@ -68,6 +69,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     LoginComponent,
     BooksComponent,
     DashboardComponent,
+    ViewcartComponent,
     //RegisterComponent,
     // DashboardComponent,
     // ViewCartComponent,
