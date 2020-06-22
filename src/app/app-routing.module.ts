@@ -3,6 +3,7 @@ import { Routes, RouterModule } from "@angular/router";
 import { LoginComponent } from "./components/login/login.component";
 import { BooksComponent } from "./components/books/books.component";
 import { DashboardComponent } from "./components/dashboard/dashboard.component";
+import { ViewcartComponent } from "./components/viewcart/viewcart.component";
 
 const routes: Routes = [
   // {
@@ -54,11 +55,11 @@ const routes: Routes = [
       { path: "", redirectTo: "/books", pathMatch: "full" },
       { path: "books", component: DashboardComponent },
       //{ path: "books/search", component: SearchComponent },
-      // {
-      //   path: "books/viewcart",
-      //   //canActivate: [AuthGuardService],
-      //   component: ViewCartComponent,
-      // },
+      {
+        path: "books/viewcart",
+        //canActivate: [AuthGuardService],
+        component: ViewcartComponent,
+      },
       // {
       //   path: "books/ordersucess/:orderId",
       //   component: OrderSuccessComponent,

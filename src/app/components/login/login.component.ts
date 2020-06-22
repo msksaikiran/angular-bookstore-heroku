@@ -76,5 +76,6 @@ export class LoginComponent implements OnInit {
   isDisabled: boolean = true;
   onlogin() {
     console.log("In login method...");
+    localStorage.setItem("token", "dfdsfdgfdgfdgfd");
   }
 }
