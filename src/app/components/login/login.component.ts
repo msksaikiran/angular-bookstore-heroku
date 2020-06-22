@@ -63,9 +63,8 @@ export class LoginComponent implements OnInit {
     private spinner: NgxSpinnerService,
     private httpservice: HttpService,
     //private route: ActivatedRoute,
-    private router: Router
-  ) //public dialogRef: MatDialogRef<LoginComponent> //private data: DataService // @Inject(MAT_DIALOG_DATA) public data: any
-  {}
+    private router: Router //public dialogRef: MatDialogRef<LoginComponent> //private data: DataService // @Inject(MAT_DIALOG_DATA) public data: any
+  ) {}
 
   ngOnInit() {}
   /**
@@ -95,42 +94,42 @@ export class LoginComponent implements OnInit {
   onlogin() {
     this.spinner.show();
     this.showSpinner = true;
-    setTimeout(() => {
-      this.spinner.hide();
-      this.httpservice
-        .postRequest(this.favoriteSeason + "/login", this.login)
-        .subscribe(
-          (response: any) => {
-            if (response.status == 200) {
-              //this.spinner.hide();
-              this.token = localStorage.getItem("token");
-              console.log(this.token);
-              this.snackBar.open("Login Successfull", "undo", {
-                duration: 2500,
-              });
-              if (this.favoriteSeason == "user") {
-                localStorage.setItem("token", response.obj);
+    // setTimeout(() => {
+    //   this.spinner.hide();
+    // this.httpservice
+    //   .postRequest(this.favoriteSeason + "/login", this.login)
+    //   .subscribe(
+    //     (response: any) => {
+    //       if (response.status == 200) {
+    //         //this.spinner.hide();
+    //         this.token = localStorage.getItem("token");
+    //         console.log(this.token);
+    //         this.snackBar.open("Login Successfull", "undo", {
+    //           duration: 2500,
+    //         });
+    //         if (this.favoriteSeason == "user") {
+    //           localStorage.setItem("token", response.obj);
 
-                this.router.navigate(["books"]);
-              }
-              if (this.favoriteSeason == "seller") {
-                localStorage.setItem("token", response.obj);
+    //           this.router.navigate(["books"]);
+    //         }
+    //         if (this.favoriteSeason == "seller") {
+    //           localStorage.setItem("token", response.obj);
 
-                //this.router.navigate(["seller/books"]);
-              } else if (this.favoriteSeason == "admin") {
-                localStorage.setItem("token", response.obj);
+    //           //this.router.navigate(["seller/books"]);
+    //         } else if (this.favoriteSeason == "admin") {
+    //           localStorage.setItem("token", response.obj);
 
-                //this.router.navigate(["admin/books"]);
-              }
-            } else {
-              //this.spinner.hide();
-              this.snackBar.open("Login Failed", "undo", { duration: 2500 });
-            }
-          },
-          (error: any) => {
-            this.snackBar.open(error.error.message, "undo", { duration: 2500 });
-          }
-        );
-    }, 2000); //spinner
+    //           //this.router.navigate(["admin/books"]);
+    //         }
+    //       } else {
+    //         //this.spinner.hide();
+    //         this.snackBar.open("Login Failed", "undo", { duration: 2500 });
+    //       }
+    //         },
+    //         (error: any) => {
+    //           this.snackBar.open(error.error.message, "undo", { duration: 2500 });
+    //         }
+    //       );
+    //   }, 2000); //spinner
   }
 }
