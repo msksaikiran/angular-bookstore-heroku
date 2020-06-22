@@ -43,10 +43,12 @@ export class LoginComponent implements OnInit {
     private snackBar: MatSnackBar,
     public formBuilder: FormBuilder,
     private spinner: NgxSpinnerService,
+    private snackbar: MatSnackBar,
     //private http: HttpClient,
     //private httpservice: HttpService,
     //private route: ActivatedRoute,
-    private router: Router //public dialogRef: MatDialogRef<LoginComponent> //private data: DataService
+    private router: Router,
+    public dialogRef: MatDialogRef<LoginComponent> //private data: DataService
   ) {}
 
   ngOnInit() {}
@@ -75,7 +77,8 @@ export class LoginComponent implements OnInit {
   seasons = ["user", "seller", "admin"];
   isDisabled: boolean = true;
   onlogin() {
-    console.log("In login method...");
+    this.dialogRef.close();
+    this.snackbar.open("Login SuccessFully", "undo", { duration: 2000 });
     localStorage.setItem("token", "dfdsfdgfdgfdgfd");
   }
 }

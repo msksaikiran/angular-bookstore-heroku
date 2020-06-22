@@ -34,6 +34,7 @@ import { LoginComponent } from "./components/login/login.component";
 import { BooksComponent } from "./components/books/books.component";
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ViewcartComponent } from './components/viewcart/viewcart.component';
+import { OrderSucessComponent } from './components/order-sucess/order-sucess.component';
 // import { RegisterComponent } from "./components/register/register.component";
 // import { FooterComponent } from "./components/footer/footer.component";
 //import { RatingComponent } from "./components/rating/rating.component";
@@ -70,6 +71,7 @@ import { ViewcartComponent } from './components/viewcart/viewcart.component';
     BooksComponent,
     DashboardComponent,
     ViewcartComponent,
+    OrderSucessComponent,
     //RegisterComponent,
     // DashboardComponent,
     // ViewCartComponent,

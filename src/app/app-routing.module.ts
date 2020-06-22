@@ -4,6 +4,7 @@ import { LoginComponent } from "./components/login/login.component";
 import { BooksComponent } from "./components/books/books.component";
 import { DashboardComponent } from "./components/dashboard/dashboard.component";
 import { ViewcartComponent } from "./components/viewcart/viewcart.component";
+import { OrderSucessComponent } from "./components/order-sucess/order-sucess.component";
 
 const routes: Routes = [
   // {
@@ -60,10 +61,10 @@ const routes: Routes = [
         //canActivate: [AuthGuardService],
         component: ViewcartComponent,
       },
-      // {
-      //   path: "books/ordersucess/:orderId",
-      //   component: OrderSuccessComponent,
-      // },
+      {
+        path: "books/ordersucess/:orderId",
+        component: OrderSucessComponent,
+      },
 
       // {
       //   path: "books/whishlist",

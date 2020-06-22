@@ -22,7 +22,9 @@ export class ViewcartComponent implements OnInit {
   // }
 
   constructor(
-    private formBuilder: FormBuilder //private addressService: AddressService
+    private formBuilder: FormBuilder,
+    private router: Router,
+    private snackbar: MatSnackBar //private addressService: AddressService
   ) {}
 
   customerForm: FormGroup;
@@ -244,10 +246,11 @@ export class ViewcartComponent implements OnInit {
   // OrderDetails: Array<Book> = [];
   grandTotal: number;
   onContinue() {
-    this.grandTotal = 0;
+    this.grandTotal = 4000;
     this.fields = false;
     this.open2 = true;
     this.customerForm.disable();
+
     // this.spinner.show();
     // this.showSpinner = true;
     // setTimeout(() => {
@@ -294,6 +297,8 @@ export class ViewcartComponent implements OnInit {
 
   orderId: any;
   onCheckOut(book: any) {
+    this.router.navigate(["/books/ordersucess/" + 123456]);
+    this.snackbar.open("Order Sucess", "undo", { duration: 1000 });
     //console.log(book);
     // this.spinner.show();
     // this.showSpinner = true;
