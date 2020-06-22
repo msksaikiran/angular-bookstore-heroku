@@ -58,13 +58,13 @@ export class LoginComponent implements OnInit {
   showSpinner = false;
   person = String;
   constructor(
-    private snackBar: MatSnackBar,
-    public formBuilder: FormBuilder,
-    private route: ActivatedRoute,
-    private router: Router,
-    private spinner: NgxSpinnerService,
-    private httpservice: HttpService //public dialogRef: MatDialogRef<LoginComponent> //private data: DataService // @Inject(MAT_DIALOG_DATA) public data: any
-  ) {}
+    //private snackBar: MatSnackBar,
+    public formBuilder: FormBuilder
+  ) // private route: ActivatedRoute,
+  // private router: Router,
+  // private spinner: NgxSpinnerService,
+  // private httpservice: HttpService //public dialogRef: MatDialogRef<LoginComponent> //private data: DataService // @Inject(MAT_DIALOG_DATA) public data: any
+  {}
 
   ngOnInit() {}
   /**
