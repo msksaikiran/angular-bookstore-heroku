@@ -8,17 +8,17 @@
 //   constructor() { }
 // }
 
-//import { Observable } from "rxjs";
+import { Observable } from "rxjs";
 import { Injectable } from "@angular/core";
 // import { environment } from "src/environments/environment";
-// import { HttpClient, HttpHeaders } from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 
 @Injectable({
   providedIn: "root",
 })
 export class HttpService {
   // token: String;
-  // constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {}
   // public postMethod(url: string, body: any, options: any): Observable<any> {
   //   return this.http.post(url, body, options);
   // }
@@ -41,9 +41,9 @@ export class HttpService {
   //   }),
   // };
   // baseurl = environment.baseUrl;
-  // public postRequest(url: any, data: any): any {
-  //   return this.http.post("http://localhost:8080/" + url, data);
-  // }
+  public postRequest(url: any, data: any): any {
+    return this.http.post("http://localhost:8080/" + url, data);
+  }
   // public putRequestForget(url, data) {
   //   return this.http.post("http://localhost:8080/" + url, data);
   // }
