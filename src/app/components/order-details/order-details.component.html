@@ -1,0 +1,45 @@
+<div flex="column" style="margin-left: 20%;">
+  <!-- <div fxLayout="column" fxLayoutAlign="space-around center"> -->
+  <mat-card class="matcard2">
+    <div class="mycart">My Orders&nbsp;({{ count }})</div>
+    <!-- <div *ngFor="let book of myDatas"> -->
+    <!-- <div *ngIf="book != null"> -->
+    <div class="mycart2">OrderId:&nbsp; 123456</div>
+
+    <div class="cartdetails" fxLayout="row" fxLayoutAlign="start start">
+      <!-- <img class="bookimg" src="{{ book.bookImage }}" /> -->
+      <img class="bookimg" src="../../../assets/images/Silverstars.jpg" />
+
+      <div class="bookdetails">
+        <div class="booktitle">
+          <!-- {{ book.bookName }} -->
+          SilverStar
+        </div>
+        <div class="sub">Saikiran</div>
+        <!-- <div class="sub">{{ book.bookAuthor }}</div> -->
+        <div style="margin-left: -25px; margin-bottom: 6%;">
+          <!-- Rs.{{ book.bookPrice }} -->
+          2000
+        </div>
+        <div class="totalprice2">
+          qty:1 &nbsp; Tp:2000
+        </div>
+      </div>
+      <!-- </div> -->
+      <!-- </div> -->
+      <br />
+    </div>
+  </mat-card>
+</div>
+<!-- <div
+    style="margin-bottom: 4%;"
+    class="footer"
+    *ngIf="books.length > 2; else foot"
+  >
+    <app-footer></app-footer>
+  </div>
+  <ng-template #foot>
+    <div class="foot" style="margin-bottom: 4%;">
+      <app-footer></app-footer>
+    </div>
+  </ng-template> -->

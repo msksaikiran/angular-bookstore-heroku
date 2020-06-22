@@ -246,7 +246,7 @@ export class ViewcartComponent implements OnInit {
   // OrderDetails: Array<Book> = [];
   grandTotal: number;
   onContinue() {
-    this.grandTotal = 4000;
+    this.grandTotal = 2000;
     this.fields = false;
     this.open2 = true;
     this.customerForm.disable();

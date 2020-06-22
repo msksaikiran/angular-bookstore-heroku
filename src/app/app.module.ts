@@ -35,6 +35,8 @@ import { BooksComponent } from "./components/books/books.component";
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ViewcartComponent } from './components/viewcart/viewcart.component';
 import { OrderSucessComponent } from './components/order-sucess/order-sucess.component';
+import { WhishlistComponent } from './components/whishlist/whishlist.component';
+import { OrderDetailsComponent } from './components/order-details/order-details.component';
 // import { RegisterComponent } from "./components/register/register.component";
 // import { FooterComponent } from "./components/footer/footer.component";
 //import { RatingComponent } from "./components/rating/rating.component";
@@ -72,6 +74,8 @@ import { OrderSucessComponent } from './components/order-sucess/order-sucess.com
     DashboardComponent,
     ViewcartComponent,
     OrderSucessComponent,
+    WhishlistComponent,
+    OrderDetailsComponent,
     //RegisterComponent,
     // DashboardComponent,
     // ViewCartComponent,

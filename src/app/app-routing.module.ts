@@ -5,6 +5,8 @@ import { BooksComponent } from "./components/books/books.component";
 import { DashboardComponent } from "./components/dashboard/dashboard.component";
 import { ViewcartComponent } from "./components/viewcart/viewcart.component";
 import { OrderSucessComponent } from "./components/order-sucess/order-sucess.component";
+import { WhishlistComponent } from "./components/whishlist/whishlist.component";
+import { OrderDetailsComponent } from "./components/order-details/order-details.component";
 
 const routes: Routes = [
   // {
@@ -65,15 +67,14 @@ const routes: Routes = [
         path: "books/ordersucess/:orderId",
         component: OrderSucessComponent,
       },
-
-      // {
-      //   path: "books/whishlist",
-      //   component: WhishlistComponent,
-      // },
-      // {
-      //   path: "books/orderdetails",
-      //   component: OrderDetailsComponent,
-      // },
+      {
+        path: "books/whishlist",
+        component: WhishlistComponent,
+      },
+      {
+        path: "books/orderdetails",
+        component: OrderDetailsComponent,
+      },
       // {
       //   path: "books/details/:bookId",
       //   component: RatingreviewComponent,
