@@ -74,7 +74,8 @@ import { MatSelectModule } from "@angular/material/select";
 // import { GiverateComponent } from "./components/giverate/giverate.component";
 import { MatDialogModule } from "@angular/material/dialog";
 import { LoginComponent } from "./components/login/login.component";
-import { BooksComponent } from './components/books/books.component';
+import { BooksComponent } from "./components/books/books.component";
+import { CookieService, CookieOptions } from "angular2-cookie/core";
 // import { AddbookComponent } from "./components/addbook/addbook.component";
 // import { SellerbooksComponent } from "./components/sellerbooks/sellerbooks.component";
 // import { UpdatebookComponent } from "./components/updatebook/updatebook.component";
@@ -150,7 +151,7 @@ import { BooksComponent } from './components/books/books.component';
     //MatBadgeModule,
     HttpClientModule,
   ],
-  providers: [],
+  providers: [{ provide: CookieOptions, useValue: {} }],
   exports: [LoginComponent],
   entryComponents: [LoginComponent],
   bootstrap: [AppComponent],
