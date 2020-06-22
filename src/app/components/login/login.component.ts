@@ -1,22 +1,3 @@
-// import { Component, OnInit } from "@angular/core";
-// import { environment } from "src/environments/environment";
-// import { Book } from "src/app/models/whish";
-
-// @Component({
-//   selector: "app-login",
-//   templateUrl: "./login.component.html",
-//   styleUrls: ["./login.component.scss"],
-// })
-// export class LoginComponent implements OnInit {
-//   constructor() {}
-
-//   value: String;
-//   book: Book = new Book();
-//   ngOnInit() {
-//     console.log("***********" + this.book.bookId);
-//     this.value = environment.GET_BOOKS_COUNT;
-//   }
-// }
 import { Component, OnInit, Input, Inject } from "@angular/core";
 import {
   Validators,
@@ -62,10 +43,10 @@ export class LoginComponent implements OnInit {
     private snackBar: MatSnackBar,
     public formBuilder: FormBuilder,
     private spinner: NgxSpinnerService,
-    private http: HttpClient,
+    //private http: HttpClient,
     //private httpservice: HttpService,
     //private route: ActivatedRoute,
-    private router: Router //public dialogRef: MatDialogRef<LoginComponent> //private data: DataService // @Inject(MAT_DIALOG_DATA) public data: any
+    private router: Router //public dialogRef: MatDialogRef<LoginComponent> //private data: DataService
   ) {}
 
   ngOnInit() {}
@@ -94,37 +75,6 @@ export class LoginComponent implements OnInit {
   seasons = ["user", "seller", "admin"];
   isDisabled: boolean = true;
   onlogin() {
-    this.spinner.show();
-    this.showSpinner = true;
-    setTimeout(() => {
-      this.spinner.hide();
-      // this.httpservice
-      //   .postRequest(this.favoriteSeason + "/login", this.login)
-      const baseurl = environment.baseUrl;
-      this.http
-        .post(baseurl + this.favoriteSeason + "/login", this.login)
-        .subscribe(
-          (response: any) => {
-            if (response.status == 200) {
-              //this.spinner.hide();
-              this.token = localStorage.getItem("token");
-              console.log(this.token);
-              this.snackBar.open("Login Successfull", "undo", {
-                duration: 2500,
-              });
-              if (this.favoriteSeason == "user") {
-                localStorage.setItem("token", response.obj);
-                this.router.navigate(["books"]);
-              }
-            } else {
-              //this.spinner.hide();
-              this.snackBar.open("Login Failed", "undo", { duration: 2500 });
-            }
-          },
-          (error: any) => {
-            this.snackBar.open(error.error.message, "undo", { duration: 2500 });
-          }
-        );
-    }, 2000); //spinner
+    console.log("In login method...");
   }
 }
