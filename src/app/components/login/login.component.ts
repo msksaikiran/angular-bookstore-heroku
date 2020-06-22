@@ -28,10 +28,7 @@ import { Login } from "src/app/models/login";
 import { MatSnackBar, MAT_DIALOG_DATA } from "@angular/material";
 import { MatDialogRef } from "@angular/material";
 import { ActivatedRoute, Router } from "@angular/router";
-import { NgxSpinnerService } from "ngx-spinner";
-import { HttpService } from "src/app/service/http.service";
-
-//import { DataService } from "src/app/service/data.service";
+//import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
   selector: "app-login",
@@ -61,7 +58,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private snackBar: MatSnackBar,
     public formBuilder: FormBuilder,
-    private spinner: NgxSpinnerService,
+    //private spinner: NgxSpinnerService,
     //private httpservice: HttpService,
     //private route: ActivatedRoute,
     private router: Router //public dialogRef: MatDialogRef<LoginComponent> //private data: DataService // @Inject(MAT_DIALOG_DATA) public data: any
@@ -92,46 +89,46 @@ export class LoginComponent implements OnInit {
   favoriteSeason: string = "user";
   seasons = ["user", "seller", "admin"];
   isDisabled: boolean = true;
-  onlogin() {
-    this.router.navigate(["books"]);
-    // this.spinner.show();
-    // this.showSpinner = true;
-    // setTimeout(() => {
-    //   this.spinner.hide();
-    // this.httpservice
-    //   .postRequest(this.favoriteSeason + "/login", this.login)
-    //   .subscribe(
-    //     (response: any) => {
-    //       if (response.status == 200) {
-    //         //this.spinner.hide();
-    //         this.token = localStorage.getItem("token");
-    //         console.log(this.token);
-    //         this.snackBar.open("Login Successfull", "undo", {
-    //           duration: 2500,
-    //         });
-    //         if (this.favoriteSeason == "user") {
-    //           localStorage.setItem("token", response.obj);
+  // onlogin() {
 
-    //           this.router.navigate(["books"]);
-    //         }
-    //         if (this.favoriteSeason == "seller") {
-    //           localStorage.setItem("token", response.obj);
+  // this.spinner.show();
+  // this.showSpinner = true;
+  // setTimeout(() => {
+  //   this.spinner.hide();
+  // this.httpservice
+  //   .postRequest(this.favoriteSeason + "/login", this.login)
+  //   .subscribe(
+  //     (response: any) => {
+  //       if (response.status == 200) {
+  //         //this.spinner.hide();
+  //         this.token = localStorage.getItem("token");
+  //         console.log(this.token);
+  //         this.snackBar.open("Login Successfull", "undo", {
+  //           duration: 2500,
+  //         });
+  //         if (this.favoriteSeason == "user") {
+  //           localStorage.setItem("token", response.obj);
 
-    //           //this.router.navigate(["seller/books"]);
-    //         } else if (this.favoriteSeason == "admin") {
-    //           localStorage.setItem("token", response.obj);
+  //           this.router.navigate(["books"]);
+  //         }
+  //         if (this.favoriteSeason == "seller") {
+  //           localStorage.setItem("token", response.obj);
 
-    //           //this.router.navigate(["admin/books"]);
-    //         }
-    //       } else {
-    //         //this.spinner.hide();
-    //         this.snackBar.open("Login Failed", "undo", { duration: 2500 });
-    //       }
-    //         },
-    //         (error: any) => {
-    //           this.snackBar.open(error.error.message, "undo", { duration: 2500 });
-    //         }
-    //       );
-    //   }, 2000); //spinner
-  }
+  //           //this.router.navigate(["seller/books"]);
+  //         } else if (this.favoriteSeason == "admin") {
+  //           localStorage.setItem("token", response.obj);
+
+  //           //this.router.navigate(["admin/books"]);
+  //         }
+  //       } else {
+  //         //this.spinner.hide();
+  //         this.snackBar.open("Login Failed", "undo", { duration: 2500 });
+  //       }
+  //         },
+  //         (error: any) => {
+  //           this.snackBar.open(error.error.message, "undo", { duration: 2500 });
+  //         }
+  //       );
+  //   }, 2000); //spinner
+  //}
 }
