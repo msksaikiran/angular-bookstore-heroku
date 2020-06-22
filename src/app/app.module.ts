@@ -157,7 +157,7 @@ import {
     HttpClientModule,
   ],
 
-  providers: [{ provide: CookieOptions, useClass: BaseCookieOptions }],
+  providers: [CookieService],
   exports: [LoginComponent],
   entryComponents: [LoginComponent],
   bootstrap: [AppComponent],

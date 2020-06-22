@@ -9,6 +9,7 @@
 // }
 
 import { Injectable } from "@angular/core";
+import { CookieService } from "angular2-cookie";
 // import { environment } from "src/environments/environment";
 //import { HttpClient } from "@angular/common/http";
 
@@ -16,6 +17,8 @@ import { Injectable } from "@angular/core";
   providedIn: "root",
 })
 export class HttpService {
+  constructor(private cookieService: CookieService) {}
+
   // token: String;
   //constructor(private http: HttpClient) {}
   // public postMethod(url: string, body: any, options: any): Observable<any> {
@@ -40,9 +43,9 @@ export class HttpService {
   //   }),
   // };
   // baseurl = environment.baseUrl;
-  // public postRequest(url: any, data: any): any {
-  //   return this.http.post("http://localhost:8080/" + url, data);
-  // }
+  public postRequest(url: any, data: any): any {
+    return this.cookieService.put("http://localhost:8080/" + url, data);
+  }
   // public putRequestForget(url, data) {
   //   return this.http.post("http://localhost:8080/" + url, data);
   // }
