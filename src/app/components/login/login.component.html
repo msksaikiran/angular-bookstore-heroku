@@ -55,7 +55,11 @@
         <button mat-button color="primary" class="btn-block2">
           Sign Up
         </button>
-        <button mat-button [disabled]="email.invalid || password.invalid">
+        <button
+          mat-button
+          [disabled]="email.invalid || password.invalid"
+          routerLink="/books"
+        >
           Sign in
         </button>
       </div>
