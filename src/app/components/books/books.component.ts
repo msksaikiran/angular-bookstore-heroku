@@ -10,6 +10,8 @@ import { Book } from "src/app/models/book";
   styleUrls: ["./books.component.scss"],
 })
 export class BooksComponent implements OnInit {
+  bookApproveStatus: boolean;
+
   @Input() book: Book;
   noOfBooks: number;
   visible: boolean;
@@ -23,9 +25,8 @@ export class BooksComponent implements OnInit {
     //private data: DataService,
     private router: Router,
     //private bookService: BookService,
-    public dialog: MatDialog
-  ) //private cartService: ViewcartService
-  {}
+    public dialog: MatDialog //private cartService: ViewcartService
+  ) {}
   ngOnInit() {
     //this.data.currentMessage.subscribe((message) => (this.message = message));
 

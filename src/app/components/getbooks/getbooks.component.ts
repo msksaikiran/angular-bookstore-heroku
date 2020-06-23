@@ -28,6 +28,7 @@ export class GetbooksComponent implements OnInit {
       sellerName: "Saikiran",
     },
     {
+      bookAddedTime: "2020-06-01T11:22:34",
       bookApproveStatus: false,
       bookAuthor: "Steve krung",
       bookDescription: "dsfdsfggfgfdgf",
