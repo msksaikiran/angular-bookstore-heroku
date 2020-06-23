@@ -16,15 +16,19 @@
           alt="Snow"
           (click)="ratingAndReviews(book)"
         />
-        <!-- <button *ngIf="book.noOfBooks == 0" class="btn">
+        <button *ngIf="book.noOfBooks == 0" class="btn">
           <strong>OUT OF STOCK</strong>
-        </button> -->
-        <button class="btn" style="color: green;">
-          <strong>Hurry! only 2 books are left</strong>
         </button>
-        <!-- <button *ngIf="noOfBooks == 1" class="btn">
-          <strong>Hurry! only 2 book is left</strong>
-        </button> -->
+        <button
+          *ngIf="noOfBooks < 6 && noOfBooks > 1"
+          class="btn"
+          style="color: green;"
+        >
+          <strong>Hurry! only {{ book.noOfBooks }} books are left</strong>
+        </button>
+        <button *ngIf="book.noOfBooks == 2" class="btn">
+          <strong>Hurry! only {{ book.noOfBooks }} book is left</strong>
+        </button>
       </div>
     </mat-card-header>
   </div>
@@ -45,18 +49,20 @@
       style="margin-bottom: -0.5%; margin-top: -1%; padding: 0 34px 0 4px;"
     >
       <button
+        *ngIf="totalRate > 0"
         class="boxx"
         fxLayout="row"
-        style="opacity: 1; background-color: #a03037;"
+        style="opacity: 1;"
+        [ngStyle]="{ 'background-color': color }"
       >
         <div>
-          4
+          {{ total }}
         </div>
         <mat-icon style="font-size: 14px; padding-top: 1.8px;">
           star
         </mat-icon>
       </button>
-      <!-- <button
+      <button
         class="boxx"
         *ngIf="totalRate == 0"
         style="
@@ -67,26 +73,48 @@
         "
       >
         <strong>New</strong>
-      </button> -->
+      </button>
     </mat-card-actions>
     <mat-card-actions fxLayout="row" fxLayoutGap="7%">
-      <button class="box1" (click)="addToCart()">
+      <button
+        class="box1"
+        *ngIf="!book.isAdded && book.noOfBooks != 0"
+        (click)="addToCart()"
+      >
         ADD TO BAG
       </button>
-      <!-- <ng-template #removeFromBag>
-        <button *ngIf="addedtobag" class="added" id="remove-from-bag">
+      <ng-template #removeFromBag>
+        <button *ngIf="book.noOfBooks != 0" class="added" id="remove-from-bag">
           ADDED TO BAG
         </button>
-      </ng-template> -->
-      <button class="box" (click)="addToWishlist()">
+      </ng-template>
+      <button
+        class="box"
+        *ngIf="!book.isAdded && book.noOfBooks != 0 && !book.isListed"
+        (click)="addToWishlist()"
+      >
         WISHLIST
       </button>
-      <!-- <button
+      <button
         class="box"
-        *ngIf="inwhishlist"
+        *ngIf="book.isListed && !book.isAdded && book.noOfBooks != 0"
       >
         IN WISHLIST
-      </button> -->
+      </button>
+      <button
+        *ngIf="book.noOfBooks == 0 && !book.isListed"
+        class="boxOutOfStockWishList"
+        id="add-to-wishlist"
+        (click)="addToWishlist()"
+      >
+        WISHLIST
+      </button>
+      <button
+        class="inwish"
+        *ngIf="book.isListed && !book.isAdded && book.noOfBooks == 0"
+      >
+        IN WISHLIST
+      </button>
     </mat-card-actions>
   </div>
 </mat-card>
