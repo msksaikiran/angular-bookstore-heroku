@@ -45,7 +45,12 @@
           Cart
         </div>
         <a (click)="onCart()" class="cartimg">
-          <mat-icon class="grab">
+          <mat-icon
+            class="grab"
+            [matBadge]="bookcount"
+            matBadgeSize="small"
+            matBadgePosition="above after"
+          >
             <img class="image" src="assets/images/supermarket@2x.png" />
           </mat-icon>
         </a>

@@ -32,13 +32,13 @@ import { MatSelectModule } from "@angular/material/select";
 import { MatDialogModule } from "@angular/material/dialog";
 import { LoginComponent } from "./components/login/login.component";
 import { BooksComponent } from "./components/books/books.component";
-import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { ViewcartComponent } from './components/viewcart/viewcart.component';
-import { OrderSucessComponent } from './components/order-sucess/order-sucess.component';
-import { WhishlistComponent } from './components/whishlist/whishlist.component';
-import { OrderDetailsComponent } from './components/order-details/order-details.component';
-import { GetbooksComponent } from './components/getbooks/getbooks.component';
-import { FooterComponent } from './components/footer/footer.component';
+import { DashboardComponent } from "./components/dashboard/dashboard.component";
+import { ViewcartComponent } from "./components/viewcart/viewcart.component";
+import { OrderSucessComponent } from "./components/order-sucess/order-sucess.component";
+import { WhishlistComponent } from "./components/whishlist/whishlist.component";
+import { OrderDetailsComponent } from "./components/order-details/order-details.component";
+import { GetbooksComponent } from "./components/getbooks/getbooks.component";
+import { FooterComponent } from "./components/footer/footer.component";
 // import { RegisterComponent } from "./components/register/register.component";
 // import { FooterComponent } from "./components/footer/footer.component";
 //import { RatingComponent } from "./components/rating/rating.component";
@@ -46,7 +46,7 @@ import { FooterComponent } from './components/footer/footer.component';
 // import { WhishlistComponent } from "./components/whishlist/whishlist.component";
 // import { OrderDetailsComponent } from "./components/order-details/order-details.component";
 // import { VerifyComponent } from "./components/verify/verify.component";
-// import { MatBadgeModule } from "@angular/material/badge";
+import { MatBadgeModule } from "@angular/material/badge";
 // import { SearchComponent } from "./components/search/search.component";
 // import { SearchPipe } from "./pipes/search.pipe";
 // import { DashboardComponent } from "./components/dashboard/dashboard.component";
@@ -137,7 +137,7 @@ import { FooterComponent } from './components/footer/footer.component';
     MatRadioModule,
     MatTooltipModule,
     MatAutocompleteModule,
-    //MatBadgeModule,
+    MatBadgeModule,
     HttpClientModule,
   ],
 

@@ -39,6 +39,7 @@ export class DashboardComponent implements OnInit {
     if (localStorage.getItem("token") != null) {
       this.visible = true;
       this.profilepic = true;
+      this.bookcount = 1;
     } else {
       this.profilepic = false;
     }
