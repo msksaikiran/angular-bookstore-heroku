@@ -226,6 +226,7 @@ export class GetbooksComponent implements OnInit {
   sortTech2: any = "Price : High to Low";
   sortTech3: any = "Newest Arrivals";
   length: number = 0;
+  pg: boolean;
   page: number = 2;
   endPage: number = 1;
   // pages: Array<Number> = [];
@@ -243,15 +244,18 @@ export class GetbooksComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.pg = true;
     this.sort;
     //this.getBooksCount();
     this.getAvailableBooks();
   }
   nextPage() {
+    this.pg = false;
     this.page = this.page + 1;
     this.doSorting(this.sort);
   }
   previousPage() {
+    this.pg = true;
     this.page = this.page - 1;
     this.doSorting(this.sort);
   }

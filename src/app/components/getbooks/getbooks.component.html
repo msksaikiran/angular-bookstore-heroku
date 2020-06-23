@@ -65,7 +65,7 @@
         <div>
           <button
             mat-mini-fab
-            [disabled]="page < 2"
+            [disabled]="pg"
             (click)="previousPage()"
             style="
               border: #e2e2e2;
@@ -85,7 +85,7 @@
         </div>
         <div>
           <button
-            [disabled]="page > endPage"
+            [disabled]="!pg"
             (click)="nextPage()"
             mat-mini-fab
             style="

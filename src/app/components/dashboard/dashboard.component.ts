@@ -38,6 +38,7 @@ export class DashboardComponent implements OnInit {
 
     if (localStorage.getItem("token") != null) {
       this.visible = true;
+      this.profilepic = true;
     } else {
       this.profilepic = false;
     }
@@ -60,9 +61,11 @@ export class DashboardComponent implements OnInit {
         this.router.navigate(["books/viewcart"]);
       } else {
         const dialogRef = this.dialog.open(LoginComponent);
-        // dialogRef.afterClosed().subscribe((result) => {
-        //   window.location.reload();
-        // });
+        dialogRef.afterClosed().subscribe((result) => {
+          if (localStorage.getItem("token") != null) {
+            this.ngOnInit();
+          }
+        });
         this.snackbar.open("please login", "ok", {
           duration: 1000,
         });
@@ -87,10 +90,12 @@ export class DashboardComponent implements OnInit {
   }
 
   onLogin() {
-    // const dialogRef = this.dialog.open(LoginComponent);
-    // dialogRef.afterClosed().subscribe(() => {
-    //   window.location.reload();
-    // });
+    const dialogRef = this.dialog.open(LoginComponent);
+    dialogRef.afterClosed().subscribe(() => {
+      if (localStorage.getItem("token") != null) {
+        this.ngOnInit();
+      }
+    });
   }
   onLogout() {
     localStorage.clear();
