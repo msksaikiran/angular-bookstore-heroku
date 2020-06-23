@@ -47,6 +47,10 @@ import { FooterComponent } from "./components/footer/footer.component";
 // import { OrderDetailsComponent } from "./components/order-details/order-details.component";
 // import { VerifyComponent } from "./components/verify/verify.component";
 import { MatBadgeModule } from "@angular/material/badge";
+import { SellerbooksComponent } from "./components/sellerbooks/sellerbooks.component";
+import { AddbookComponent } from "./components/addbook/addbook.component";
+import { UpdatebookComponent } from "./components/updatebook/updatebook.component";
+import { SellerdashboardComponent } from "./components/sellerdashboard/sellerdashboard.component";
 // import { SearchComponent } from "./components/search/search.component";
 // import { SearchPipe } from "./pipes/search.pipe";
 // import { DashboardComponent } from "./components/dashboard/dashboard.component";
@@ -80,6 +84,10 @@ import { MatBadgeModule } from "@angular/material/badge";
     OrderDetailsComponent,
     GetbooksComponent,
     FooterComponent,
+    SellerbooksComponent,
+    AddbookComponent,
+    UpdatebookComponent,
+    SellerdashboardComponent,
     //RegisterComponent,
     // DashboardComponent,
     // ViewCartComponent,

@@ -1,0 +1,179 @@
+<div class="backcontainer" fxLayout="column" fxLayoutAlign="start none">
+  <mat-toolbar style="background-color: #a03037;">
+    <mat-toolbar-row>
+      <!--------------- bookimg and book --------------------------->
+      <div
+        style="height: 40%; margin-left: 8%;"
+        fxShow="true"
+        fxHide.lt-md="true"
+      >
+        <a (click)="onBook()" class="bookicon">
+          <mat-icon color="primary" class="grab">
+            <img class="bookimg" src="assets/images/education@2x.png" />
+          </mat-icon>
+        </a>
+      </div>
+      <div style="height: 40%; margin-left: 2%;" fxHide fxShow.lt-md>
+        <a (click)="onBook()">
+          <mat-icon color="primary" class="grab">
+            <img class="bookimg2" src="assets/images/education@2x.png" />
+          </mat-icon>
+        </a>
+        <div class="booktext2">
+          <div style="margin-bottom: -18px;">
+            Book
+          </div>
+          <div>
+            Store
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="booktext" fxhide="10" fxHide.xs="true">BookStore</div> -->
+      <div class="booktext" fxShow="true" fxHide.lt-md="true">BookStore</div>
+
+      <!-------------------- search ------------------->
+      <div class="searche">
+        <img
+          class="scicon"
+          src="assets/images/searchicon.png"
+          (click)="searching()"
+        />
+        <input
+          type="text"
+          class="searchinput"
+          placeholder="search"
+          autocomplete="off"
+          [(ngModel)]="searchText"
+          (click)="searching()"
+        />
+      </div>
+
+      <!-------------------- cart -------------------->
+      <div fxLayout="row" fxLayoutAlign="start end" style="margin-left: 15%;">
+        <div class="carttext">
+          Seller
+        </div>
+        <!-- <div class="carttext" (click)="onCart()" fxhide="10" fxHide.xs="true">
+          Cart
+        </div> -->
+        <!-- <a (click)="onCart()" class="cartimg">
+          <mat-icon
+            class="grab"
+            [matBadge]="bookcount"
+            matBadgeSize="small"
+            matBadgePosition="above after"
+          >
+            <img class="image" src="assets/images/supermarket@2x.png" />
+          </mat-icon>
+        </a> -->
+
+        <button
+          *ngIf="!profilepic"
+          mat-icon-button
+          width="30"
+          style="margin-left: 21%; background-color: whitesmoke;"
+          fxShow="true"
+          fxHide.lt-md="true"
+          [matMenuTriggerFor]="beforeMenu"
+        >
+          <mat-icon id="cartimg">perm_identity</mat-icon>
+        </button>
+
+        <button
+          *ngIf="!profilepic"
+          mat-icon-button
+          style="
+            margin-left: 4%;
+            width: 40px;
+            height: 40px;
+            background-color: whitesmoke;
+          "
+          fxHide
+          fxShow.lt-md
+          [matMenuTriggerFor]="beforeMenu"
+        >
+          <mat-icon>perm_identity</mat-icon>
+        </button>
+
+        <button
+          *ngIf="profilepic"
+          mat-icon-button
+          fxShow="true"
+          width="30"
+          style="margin-left: 20%; background-color: whitesmoke;"
+          fxShow="true"
+          fxHide.lt-md="true"
+          [matMenuTriggerFor]="beforeMenu"
+        >
+          <img
+            class="profile"
+            src="https://msksaikiran.s3.us-east-2.amazonaws.com/user/Indian-Army-4.jpg"
+          />
+        </button>
+        <!--------------- app ---------------->
+        <button
+          *ngIf="profilepic"
+          mat-icon-button
+          class="apps"
+          [matMenuTriggerFor]="beforeMenu"
+          fxHide
+          fxShow.lt-md
+        >
+          <img
+            class="profile2"
+            src="https://msksaikiran.s3.us-east-2.amazonaws.com/user/Indian-Army-4.jpg"
+          />
+          <!-- <mat-icon matTooltip="appearance" [ngStyle]="{ color: 'white' }"
+              >apps</mat-icon
+            > -->
+        </button>
+        <mat-menu #beforeMenu="matMenu" xPosition="before">
+          <div style="width: 200px;">
+            <div *ngIf="!visible">
+              <button
+                mat-menu-item
+                style="text-align: center;"
+                (click)="onLogin()"
+              >
+                Login
+              </button>
+            </div>
+            <button
+              mat-menu-item
+              [disabled]="!visible"
+              style="text-align: center;"
+              (click)="onLogout()"
+            >
+              Logout
+            </button>
+
+            <!-- <label> -->
+            <button
+              [disabled]="!visible"
+              value="uploadProfile"
+              class="uploadimage"
+              (click)="fileInput.click($event)"
+            >
+              Upload Profile
+              <input
+                style="display: none;"
+                #fileInput
+                type="file"
+                name="fileupload"
+                (change)="fileChange($event)"
+              />
+            </button>
+            <!-- </label> -->
+          </div>
+        </mat-menu>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <mat-sidenav-container>
+    <mat-sidenav-content>
+      <app-sellerbooks></app-sellerbooks>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

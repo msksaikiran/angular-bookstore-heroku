@@ -1,4 +1,4 @@
-import { NgModule } from "@angular/core";
+import { NgModule, Component } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { LoginComponent } from "./components/login/login.component";
 import { BooksComponent } from "./components/books/books.component";
@@ -8,6 +8,9 @@ import { OrderSucessComponent } from "./components/order-sucess/order-sucess.com
 import { WhishlistComponent } from "./components/whishlist/whishlist.component";
 import { OrderDetailsComponent } from "./components/order-details/order-details.component";
 import { GetbooksComponent } from "./components/getbooks/getbooks.component";
+import { SellerdashboardComponent } from "./components/sellerdashboard/sellerdashboard.component";
+import { AddbookComponent } from "./components/addbook/addbook.component";
+import { UpdatebookComponent } from "./components/updatebook/updatebook.component";
 
 const routes: Routes = [
   // {
@@ -34,10 +37,18 @@ const routes: Routes = [
   //   path: ":role/registration/verify/:token",
   //   component: VerifyComponent,
   // },
-  // {
-  //   path: "seller/books",
-  //   component: SellerdashboardComponent,
-  // },
+  {
+    path: "seller/books",
+    component: SellerdashboardComponent,
+  },
+  {
+    path: "addbook",
+    component: AddbookComponent,
+  },
+  {
+    path: "update",
+    component: UpdatebookComponent,
+  },
   // {
   //   path: "admin",
   //   component: AdmindashboardComponent,

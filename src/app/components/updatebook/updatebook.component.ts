@@ -1,0 +1,77 @@
+import { Component, OnInit, Inject } from "@angular/core";
+import { Addbook } from "src/app/models/addbook";
+import { FormControl, Validators } from "@angular/forms";
+import { ActivatedRoute, Router } from "@angular/router";
+import { MatSnackBar, MAT_DIALOG_DATA, MatDialogRef } from "@angular/material";
+import { NgxSpinnerService } from "ngx-spinner";
+import { Updatebook } from "src/app/models/updatebook";
+
+@Component({
+  selector: "app-updatebook",
+  templateUrl: "./updatebook.component.html",
+  styleUrls: ["./updatebook.component.scss"],
+})
+export class UpdatebookComponent implements OnInit {
+  updateb: Updatebook = new Updatebook();
+  bookName = new FormControl(this.data.bookName, [Validators.required]);
+  bookAuthor = new FormControl(this.data.bookAuthor, [Validators.required]);
+  bookPrice = new FormControl(this.data.bookPrice, [Validators.required]);
+  noOfBooks = new FormControl(this.data.noOfBooks, [Validators.required]);
+  bookDescription = new FormControl(this.data.bookDescription, [
+    Validators.required,
+  ]);
+  action: string;
+  local_data: any;
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public data: any
+  ) //private bookservice: BookService,
+  // private activedRoute: ActivatedRoute,
+  // private router: Router,
+  // private matSnackBar: MatSnackBar,
+  //private http: HttpClient,
+  //public dialogRef: MatDialogRef<UpdatebookComponent>,
+  //private spinner: NgxSpinnerService
+  {
+    this.local_data = { ...data };
+  }
+
+  ngOnInit() {
+    this.update();
+  }
+  showSpinner = false;
+  update() {
+    console.log("bookId---------->" + this.data.bookId);
+    this.updateb.bookName = this.data.bookName;
+    this.updateb.bookAuthor = this.data.bookAuthor;
+    this.updateb.bookPrice = this.data.bookPrice;
+    this.updateb.noOfBooks = this.data.noOfBooks;
+    this.updateb.bookDescription = this.data.bookDescription;
+    //   //this.dialogRef.close();
+    //   this.spinner.show();
+    //   this.showSpinner = true;
+    //   setTimeout(() => {
+    //     this.spinner.hide();
+    //     this.bookservice.updateBook(this.data.bookId, this.updateb).subscribe(
+    //       (response: any) => {
+    //         if (response.status == 200 || response.status == "OK") {
+    //           this.dialogRef.close({ data: this.updateb });
+    //           this.matSnackBar.open("Book updated successfully", "undo", {
+    //             duration: 3000,
+    //           });
+    //         } else {
+    //           this.dialogRef.close();
+    //           this.matSnackBar.open("Book not updated...try again", "undo", {
+    //             duration: 2500,
+    //           });
+    //         }
+    //       },
+    //       (error: any) => {
+    //         this.dialogRef.close();
+    //         this.matSnackBar.open("something went wrong.....!", "undo", {
+    //           duration: 2500,
+    //         });
+    //       }
+    //     );
+    //   }, 3000); //spinner
+  }
+}
