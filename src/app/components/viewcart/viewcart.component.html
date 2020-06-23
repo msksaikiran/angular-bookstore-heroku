@@ -2,62 +2,60 @@
   <mat-card class="matcard1" [ngClass]="open == true ? 'matcardincr' : 'dummy'">
     <div *ngIf="count" class="mycart">My cart&nbsp;({{ bookcount }})</div>
     <div *ngIf="!count" class="mycart">My cart&nbsp;({{ bookcount }})</div>
-    <!-- <div *ngFor="let book of bookNquantityData"> -->
-    <!-- <div *ngIf="book != null"> -->
-    <div class="cartdetails" fxLayout="row" fxLayoutAlign="start start">
-      <img class="bookimg" src="../../../assets/images/Silverstars.jpg" />
-      <div class="bookdetails">
-        <div class="booktitle" style="word-wrap: break-word;">
-          <!-- {{ book.bookName }} -->
-          SilverStar
-        </div>
-        <div class="sub" style="word-wrap: break-word;">
-          <!-- {{ book.bookAuthor }} -->
-          Saikiran
-        </div>
+    <div *ngFor="let book of books">
+      <!-- <div *ngIf="book != null"> -->
+      <div class="cartdetails" fxLayout="row" fxLayoutAlign="start start">
+        <img class="bookimg" src="{{ book.bookImage }}" />
+        <div class="bookdetails">
+          <div class="booktitle" style="word-wrap: break-word;">
+            {{ book.bookName }}
+          </div>
+          <div class="sub" style="word-wrap: break-word;">
+            {{ book.bookAuthor }}
+          </div>
 
-        <div class="totalprice" fxLayout="row wrap">
-          <!-- Rs. {{ book.bookPrice }} -->
-          2000
+          <div class="totalprice" fxLayout="row wrap">
+            Rs. {{ book.bookPrice }}
+          </div>
         </div>
       </div>
-    </div>
 
-    <div
-      fxLayout="row wrap"
-      style="
-        justify-content: flex-center;
-        margin-left: 19%;
-        margin-bottom: 22px;
-      "
-    >
-      <!-- <div fxLayout="row" style="margin-bottom: 20px;"> -->
-      <div style="margin-top: -3px;">
-        <button mat-icon-button (click)="ondescQuantity(book)">
-          <mat-icon>remove_circle_outline</mat-icon>
-        </button>
-      </div>
-      <div>
-        <!-- <div class="quantity">{{ quaty.quantityOfBook }}</div> -->
-        <div class="quantity">1</div>
-      </div>
-      <div style="margin-top: -3px;">
-        <button mat-icon-button (click)="onQuantity(book)">
-          <mat-icon>add_circle_outline</mat-icon>
-        </button>
-      </div>
-      <button
-        class="grab"
-        (click)="onRemove(book)"
-        style="background-color: white; border: none; outline: none;"
+      <div
+        fxLayout="row wrap"
+        style="
+          justify-content: flex-center;
+          margin-left: 19%;
+          margin-bottom: 22px;
+        "
       >
-        <div style="font: 18px/15px Lato; flex-wrap: wrap;">
-          &nbsp; Remove
+        <!-- <div fxLayout="row" style="margin-bottom: 20px;"> -->
+        <div style="margin-top: -3px;">
+          <button mat-icon-button (click)="ondescQuantity(book)">
+            <mat-icon>remove_circle_outline</mat-icon>
+          </button>
         </div>
-      </button>
+        <div>
+          <!-- <div class="quantity">{{ quaty.quantityOfBook }}</div> -->
+          <div class="quantity" *ngIf="qtvisible">{{ qtofbook }}</div>
+          <div class="quantity" *ngIf="!qtvisible">{{ qtofbook }}</div>
+        </div>
+        <div style="margin-top: -3px;">
+          <button mat-icon-button (click)="onQuantity(book)">
+            <mat-icon>add_circle_outline</mat-icon>
+          </button>
+        </div>
+        <button
+          class="grab"
+          (click)="onRemove(book)"
+          style="background-color: white; border: none; outline: none;"
+        >
+          <div style="font: 18px/15px Lato; flex-wrap: wrap;">
+            &nbsp; Remove
+          </div>
+        </button>
+      </div>
+      <!-- </div> -->
     </div>
-    <!-- </div> -->
-    <!-- </div> -->
 
     <!----- end of for ----------->
     <div fxLayout="column" fxLayoutAlign="end end" *ngIf="placeOrder">
@@ -465,38 +463,36 @@
   <mat-card class="matcard2" *ngIf="open2">
     <div class="mycart">Order summery</div>
     <div>
-      <!-- <div *ngFor="let book of bookNquantityData"> -->
-      <!-- <div *ngIf="book != null"> -->
-      <div class="cartdetails" fxLayout="row" fxLayoutAlign="start start">
-        <!-- <img class="bookimg" src="{{ book.bookImage }}" /> -->
-        <img class="bookimg" src="../../../assets/images/Silverstars.jpg" />
-        <div class="bookdetails">
-          <div class="booktitle2">
-            <!-- {{ book.bookName }} -->
-            SilverStar
-          </div>
+      <div *ngFor="let book of books">
+        <!-- <div *ngIf="book != null"> -->
+        <div class="cartdetails" fxLayout="row" fxLayoutAlign="start start">
+          <!-- <img class="bookimg" src="{{ book.bookImage }}" /> -->
+          <img class="bookimg" src="{{ book.bookImage }}" />
+          <div class="bookdetails">
+            <div class="booktitle2">
+              {{ book.bookName }}
+            </div>
 
-          <!-- <div class="sub2">{{ book.bookAuthor }}</div> -->
-          <div class="sub2">sai</div>
-          <div class="totalprice" fxLayout="row wrap">
-            <!-- Rs. {{ book.bookPrice }} -->
-            2000
-          </div>
+            <div class="sub2">{{ book.bookAuthor }}</div>
 
-          <div
-            class="totalprice2"
-            fxLayout="row wrap"
-            fxLayoutGap="22px"
-            style="justify-content: flex-start;"
-            fxLayoutAlign="flex-start"
-          >
-            <!-- qty:{{ quaty.quantityOfBook }} &nbsp; Tp:{{ quaty.totalprice }} -->
-            qty:1 &nbsp; Tp:2000
+            <div class="totalprice" fxLayout="row wrap">
+              Rs. {{ book.bookPrice }}
+            </div>
+
+            <div
+              class="totalprice2"
+              fxLayout="row wrap"
+              fxLayoutGap="22px"
+              style="justify-content: flex-start;"
+              fxLayoutAlign="flex-start"
+            >
+              <!-- qty:{{ quaty.quantityOfBook }} &nbsp; Tp:{{ quaty.totalprice }} -->
+              qty:{{ qtofbook }} &nbsp; Tp:{{ tp }}
+            </div>
           </div>
         </div>
+        <!-- </div> -->
       </div>
-      <!-- </div> -->
-      <!-- </div> -->
       <div
         fxLayout="column"
         fxLayoutAlign="start end"

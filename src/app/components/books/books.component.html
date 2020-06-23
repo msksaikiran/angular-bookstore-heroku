@@ -49,14 +49,13 @@
       style="margin-bottom: -0.5%; margin-top: -1%; padding: 0 34px 0 4px;"
     >
       <button
-        *ngIf="totalRate > 0"
+        *ngIf="book.bookApproveStatus"
         class="boxx"
         fxLayout="row"
-        style="opacity: 1;"
-        [ngStyle]="{ 'background-color': color }"
+        style="opacity: 1; background-color: #a03037;"
       >
         <div>
-          {{ total }}
+          4.5
         </div>
         <mat-icon style="font-size: 14px; padding-top: 1.8px;">
           star
@@ -64,7 +63,7 @@
       </button>
       <button
         class="boxx"
-        *ngIf="totalRate == 0"
+        *ngIf="totalRate == 0 && !book.bookApproveStatus"
         style="
           padding-right: 6px;
           box-shadow: rgb(171, 182, 75) !important;
@@ -78,19 +77,24 @@
     <mat-card-actions fxLayout="row" fxLayoutGap="7%">
       <button
         class="box1"
-        *ngIf="!book.isAdded && book.noOfBooks != 0"
+        *ngIf="!book.isAdded && book.noOfBooks != 0 && !book.bookApproveStatus"
         (click)="addToCart()"
       >
         ADD TO BAG
       </button>
-      <ng-template #removeFromBag>
-        <button *ngIf="book.noOfBooks != 0" class="added" id="remove-from-bag">
-          ADDED TO BAG
-        </button>
-      </ng-template>
+      <!-- <ng-template #removeFromBag> -->
+      <button *ngIf="book.bookApproveStatus" class="added" id="remove-from-bag">
+        ADDED TO BAG
+      </button>
+      <!-- </ng-template> -->
       <button
         class="box"
-        *ngIf="!book.isAdded && book.noOfBooks != 0 && !book.isListed"
+        *ngIf="
+          !book.isAdded &&
+          book.noOfBooks != 0 &&
+          !book.isListed &&
+          !book.bookApproveStatus
+        "
         (click)="addToWishlist()"
       >
         WISHLIST

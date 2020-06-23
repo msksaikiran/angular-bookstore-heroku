@@ -16,10 +16,25 @@ import { Address } from "src/app/models/address";
   styleUrls: ["./viewcart.component.scss"],
 })
 export class ViewcartComponent implements OnInit {
-  // constructor() { }
-
-  // ngOnInit() {
-  // }
+  books = [
+    {
+      bookAddedTime: "2020-06-01T11:22:34",
+      bookApproveStatus: false,
+      bookAuthor: "Silver",
+      bookDescription:
+        "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata",
+      bookId: 3,
+      bookImage:
+        "https://msksaikiran.s3.us-east-2.amazonaws.com/book/Silverstars.jpg",
+      bookName: "SilverStar",
+      bookPrice: 2000,
+      bookUpdatedTime: "2020-06-04T19:19:39",
+      bookVerified: true,
+      noOfBooks: 10,
+      reviewRating: [],
+      sellerName: "Saikiran",
+    },
+  ];
 
   constructor(
     private formBuilder: FormBuilder,
@@ -28,7 +43,9 @@ export class ViewcartComponent implements OnInit {
   ) {}
 
   customerForm: FormGroup;
+  qtofbook: number;
   ngOnInit() {
+    this.qtofbook = 1;
     // this.data.currentMessage.subscribe((message) => {
     //   if ((message = "remove")) {
     //     this.bookNquantityData.splice(0);
@@ -109,11 +126,18 @@ export class ViewcartComponent implements OnInit {
     //   }
     // );
   }
-
+  qtofbook2: number;
+  qtvisible: boolean = true;
   onQuantity(book: any) {
     /**
      * if bookcount is equal to noOfBooks available
      */
+    this.placeOrder = true;
+    this.open = false;
+    this.open2 = false;
+    //this.qtofbook2 = 1;
+    this.qtofbook = 1 + this.qtofbook;
+    this.qtvisible = false;
     // if (book.quantitybto[0]["quantityOfBook"] == book.noOfBooks) {
     //   this.snackbar.open(
     //     "Only " +
@@ -145,6 +169,18 @@ export class ViewcartComponent implements OnInit {
   }
 
   ondescQuantity(book: any) {
+    this.placeOrder = true;
+    this.open = false;
+    this.open2 = false;
+    if (this.qtofbook == 1) {
+      this.snackbar.open("Atleast 1 Book in the cart", "undo", {
+        duration: 2500,
+      });
+    } else {
+      this.qtofbook = this.qtofbook - 1;
+      this.qtvisible = false;
+    }
+
     // if (book.quantitybto[0]["quantityOfBook"] == 1) {
     //   this.snackbar.open("Atleast 1 Book in the cart", "undo", {
     //     duration: 2500,
@@ -245,12 +281,13 @@ export class ViewcartComponent implements OnInit {
   addModel: Address = new Address();
   // OrderDetails: Array<Book> = [];
   grandTotal: number;
+  tp: number = 2000;
   onContinue() {
     this.grandTotal = 2000;
     this.fields = false;
     this.open2 = true;
     this.customerForm.disable();
-
+    this.tp *= this.qtofbook;
     // this.spinner.show();
     // this.showSpinner = true;
     // setTimeout(() => {
@@ -286,7 +323,7 @@ export class ViewcartComponent implements OnInit {
     //     ];
     //   }
     // }
-    this.grandTotal += this.shippingCharge;
+    this.grandTotal = this.tp + this.shippingCharge;
   }
 
   onEdit() {
