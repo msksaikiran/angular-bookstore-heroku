@@ -19,16 +19,21 @@
   margin-left: 37px;
 }
 
+.bookimg2 {
+  width: 31px;
+  height: 24px;
+  margin-left: -2px;
+}
 // .spacer {
 //   flex: 1 1 center;
 // }
 .searche {
-  width: 36%;
+  width: 40%;
   height: 55%;
   background: #fcfcfc 0% 0% no-repeat padding-box;
   border-radius: 3px;
   opacity: 1;
-  margin-left: 55px;
+  margin-left: 60px;
 }
 .searchinput {
   width: 75%;
@@ -66,7 +71,9 @@
   width: 20px;
   height: 21px;
 }
-
+.apps {
+  margin-left: 2px;
+}
 .mat-badge-content {
   background: #a03037;
 }
@@ -77,8 +84,8 @@
 }
 
 .profile2 {
-  height: 36px;
-  width: 36px;
+  height: 38px;
+  width: 38px;
   border-radius: 34px;
 }
 
@@ -104,6 +111,16 @@
   //margin-top: -36px;
   margin-left: 50px;
   font-size: 18px;
+}
+.booktext2 {
+  color: #ffffff;
+  //margin-top: -36px;
+  word-wrap: break-word;
+  flex-wrap: wrap;
+  margin-left: 4%;
+  margin-right: -45px;
+  font-size: small;
+  //font-size: 18px;
 }
 
 .grab {
