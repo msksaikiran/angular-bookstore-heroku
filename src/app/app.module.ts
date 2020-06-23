@@ -51,6 +51,10 @@ import { SellerbooksComponent } from "./components/sellerbooks/sellerbooks.compo
 import { AddbookComponent } from "./components/addbook/addbook.component";
 import { UpdatebookComponent } from "./components/updatebook/updatebook.component";
 import { SellerdashboardComponent } from "./components/sellerdashboard/sellerdashboard.component";
+import { AdmindashboardComponent } from './components/admindashboard/admindashboard.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { DisApproveBooksComponent } from './components/dis-approve-books/dis-approve-books.component';
+import { VerifyconfrimComponent } from './components/verifyconfrim/verifyconfrim.component';
 // import { SearchComponent } from "./components/search/search.component";
 // import { SearchPipe } from "./pipes/search.pipe";
 // import { DashboardComponent } from "./components/dashboard/dashboard.component";
@@ -88,6 +92,10 @@ import { SellerdashboardComponent } from "./components/sellerdashboard/sellerdas
     AddbookComponent,
     UpdatebookComponent,
     SellerdashboardComponent,
+    AdmindashboardComponent,
+    AdminComponent,
+    DisApproveBooksComponent,
+    VerifyconfrimComponent,
     //RegisterComponent,
     // DashboardComponent,
     // ViewCartComponent,

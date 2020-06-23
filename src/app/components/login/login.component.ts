@@ -51,7 +51,10 @@ export class LoginComponent implements OnInit {
     public dialogRef: MatDialogRef<LoginComponent> //private data: DataService
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.login.mailOrMobile = "msaikiran@gmail.com";
+    this.login.password = "Saikiran";
+  }
   /**
    * Email validation
    */
@@ -94,8 +97,8 @@ export class LoginComponent implements OnInit {
       } else if (this.favoriteSeason == "admin") {
         localStorage.setItem("token", "dfdsfdgfdgfdgfd");
         this.dialogRef.close();
-        this.router.navigate(["books"]);
-        //this.router.navigate(["admin/books"]);
+
+        this.router.navigate(["admin/books"]);
       }
     }, 2000); //spinner
   }

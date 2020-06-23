@@ -11,6 +11,10 @@ import { GetbooksComponent } from "./components/getbooks/getbooks.component";
 import { SellerdashboardComponent } from "./components/sellerdashboard/sellerdashboard.component";
 import { AddbookComponent } from "./components/addbook/addbook.component";
 import { UpdatebookComponent } from "./components/updatebook/updatebook.component";
+import { AdmindashboardComponent } from "./components/admindashboard/admindashboard.component";
+import { AdminComponent } from "./components/admin/admin.component";
+import { VerifyconfrimComponent } from "./components/verifyconfrim/verifyconfrim.component";
+import { DisApproveBooksComponent } from "./components/dis-approve-books/dis-approve-books.component";
 
 const routes: Routes = [
   // {
@@ -49,20 +53,24 @@ const routes: Routes = [
     path: "update",
     component: UpdatebookComponent,
   },
-  // {
-  //   path: "admin",
-  //   component: AdmindashboardComponent,
-  //   children: [
-  //     {
-  //       path: "books",
-  //       component: AdminComponent,
-  //     },
-  //     {
-  //       path: "disapprovebooks",
-  //       component: DisApprovedBooksComponent,
-  //     },
-  //   ],
-  // },
+  {
+    path: "confrim",
+    component: VerifyconfrimComponent,
+  },
+  {
+    path: "admin",
+    component: AdmindashboardComponent,
+    children: [
+      {
+        path: "books",
+        component: AdminComponent,
+      },
+      {
+        path: "disapprovebooks",
+        component: DisApproveBooksComponent,
+      },
+    ],
+  },
   {
     path: "",
     component: DashboardComponent,

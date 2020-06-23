@@ -1,15 +1,15 @@
 import { Component, OnInit } from "@angular/core";
-import { LoginComponent } from "../login/login.component";
-import { MatSnackBar, MatDialog } from "@angular/material";
 import { ActivatedRoute, Router } from "@angular/router";
 import { NgxSpinnerService } from "ngx-spinner";
+import { MatSnackBar, MatDialog } from "@angular/material";
+import { LoginComponent } from "../login/login.component";
 
 @Component({
-  selector: "app-sellerdashboard",
-  templateUrl: "./sellerdashboard.component.html",
-  styleUrls: ["./sellerdashboard.component.scss"],
+  selector: "app-admindashboard",
+  templateUrl: "./admindashboard.component.html",
+  styleUrls: ["./admindashboard.component.scss"],
 })
-export class SellerdashboardComponent implements OnInit {
+export class AdmindashboardComponent implements OnInit {
   searchText: any;
   constructor(
     private route: ActivatedRoute,
@@ -71,7 +71,7 @@ export class SellerdashboardComponent implements OnInit {
     setTimeout(() => {
       this.spinner.hide();
       this.bookcount = 0;
-      this.router.navigate(["/books"]);
+      //this.router.navigate(["/books"]);
       window.location.reload();
     }, 1000);
   }
@@ -132,5 +132,17 @@ export class SellerdashboardComponent implements OnInit {
     //       ///  console.log("upload", response);
     //     });
     // }
+  }
+  approve: boolean = true;
+  app: boolean;
+  getDisApprove() {
+    this.app = true;
+    this.approve = false;
+    this.router.navigate(["admin/disapprovebooks"]);
+  }
+
+  getApprove() {
+    this.approve = true;
+    this.router.navigate(["admin/books"]);
   }
 }

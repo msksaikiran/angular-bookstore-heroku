@@ -52,7 +52,7 @@
       <!-------------------- cart -------------------->
       <div fxLayout="row" fxLayoutAlign="start end" style="margin-left: 15%;">
         <div class="carttext">
-          Seller
+          Admin
         </div>
         &nbsp;
 
@@ -113,11 +113,29 @@
             src="https://msksaikiran.s3.us-east-2.amazonaws.com/user/Indian-Army-4.jpg"
           />
           <!-- <mat-icon matTooltip="appearance" [ngStyle]="{ color: 'white' }"
-              >apps</mat-icon
-            > -->
+                >apps</mat-icon
+              > -->
         </button>
-        <mat-menu #beforeMenu="matMenu" xPosition="before">
+        <mat-menu #beforeMenu="matMenu">
           <div style="width: 200px;">
+            <div *ngIf="visible">
+              <button
+                mat-menu-item
+                [disabled]="approve"
+                style="text-align: center;"
+                (click)="getApprove()"
+              >
+                Approve Books
+              </button>
+              <button
+                mat-menu-item
+                [disabled]="!approve"
+                style="text-align: center;"
+                (click)="getDisApprove()"
+              >
+                DisApproved Books
+              </button>
+            </div>
             <div *ngIf="!visible">
               <button
                 mat-menu-item
@@ -127,6 +145,7 @@
                 Login
               </button>
             </div>
+
             <button
               mat-menu-item
               [disabled]="!visible"
@@ -160,7 +179,6 @@
   </mat-toolbar>
   <mat-sidenav-container>
     <mat-sidenav-content>
-      <app-sellerbooks></app-sellerbooks>
       <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>
