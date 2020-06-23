@@ -77,8 +77,26 @@ export class LoginComponent implements OnInit {
   seasons = ["user", "seller", "admin"];
   isDisabled: boolean = true;
   onlogin() {
-    this.dialogRef.close();
-    this.snackbar.open("Login SuccessFully", "undo", { duration: 2000 });
-    localStorage.setItem("token", "dfdsfdgfdgfdgfd");
+    this.spinner.show();
+    this.showSpinner = true;
+    setTimeout(() => {
+      this.spinner.hide();
+      this.snackbar.open("Login SuccessFully", "undo", { duration: 2000 });
+      if (this.favoriteSeason == "user") {
+        localStorage.setItem("token", "dfdsfdgfdgfdgfd");
+        this.dialogRef.close();
+        this.router.navigate(["books"]);
+      }
+      if (this.favoriteSeason == "seller") {
+        localStorage.setItem("token", "dfdsfdgfdgfdgfd");
+        this.dialogRef.close();
+        this.router.navigate(["seller/books"]);
+      } else if (this.favoriteSeason == "admin") {
+        localStorage.setItem("token", "dfdsfdgfdgfdgfd");
+        this.dialogRef.close();
+        this.router.navigate(["books"]);
+        //this.router.navigate(["admin/books"]);
+      }
+    }, 2000); //spinner
   }
 }
