@@ -13,24 +13,24 @@
           </mat-icon>
         </a>
       </div>
-      <div style="height: 40%;" fxHide fxShow.lt-md>
+      <div style="height: 40%; margin-left: 2%;" fxHide fxShow.lt-md>
         <a (click)="onBook()">
           <mat-icon color="primary" class="grab">
             <img class="bookimg2" src="assets/images/education@2x.png" />
           </mat-icon>
         </a>
+        <div class="booktext2">
+          <div style="margin-bottom: -18px;">
+            Book
+          </div>
+          <div>
+            Store
+          </div>
+        </div>
       </div>
 
       <!-- <div class="booktext" fxhide="10" fxHide.xs="true">BookStore</div> -->
       <div class="booktext" fxShow="true" fxHide.lt-md="true">BookStore</div>
-      <div class="booktext2" fxHide fxShow.lt-md>
-        <div style="margin-bottom: -18px;">
-          Book
-        </div>
-        <div>
-          Store
-        </div>
-      </div>
 
       <!-------------------- search ------------------->
       <div class="searche">
@@ -50,7 +50,7 @@
       </div>
 
       <!-------------------- cart -------------------->
-      <div fxLayout="row" fxLayoutAlign="start end" style="margin-left: 13%;">
+      <div fxLayout="row" fxLayoutAlign="start end" style="margin-left: 15%;">
         <div class="carttext" (click)="onCart()" fxhide="10" fxHide.xs="true">
           Cart
         </div>
