@@ -37,6 +37,8 @@ import { ViewcartComponent } from './components/viewcart/viewcart.component';
 import { OrderSucessComponent } from './components/order-sucess/order-sucess.component';
 import { WhishlistComponent } from './components/whishlist/whishlist.component';
 import { OrderDetailsComponent } from './components/order-details/order-details.component';
+import { GetbooksComponent } from './components/getbooks/getbooks.component';
+import { FooterComponent } from './components/footer/footer.component';
 // import { RegisterComponent } from "./components/register/register.component";
 // import { FooterComponent } from "./components/footer/footer.component";
 //import { RatingComponent } from "./components/rating/rating.component";
@@ -76,6 +78,8 @@ import { OrderDetailsComponent } from './components/order-details/order-details.
     OrderSucessComponent,
     WhishlistComponent,
     OrderDetailsComponent,
+    GetbooksComponent,
+    FooterComponent,
     //RegisterComponent,
     // DashboardComponent,
     // ViewCartComponent,

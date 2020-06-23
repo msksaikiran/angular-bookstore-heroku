@@ -13,9 +13,8 @@ export class OrderDetailsComponent implements OnInit {
   constructor(
     private spinner: NgxSpinnerService,
     private route: ActivatedRoute,
-    private router: Router // private snackbar: MatSnackBar,
-  ) // private userService: UserService,
-  // private addressService: AddressService
+    private router: Router // private snackbar: MatSnackBar, // private userService: UserService,
+  ) // private addressService: AddressService
   {}
 
   ngOnInit() {
@@ -25,8 +24,27 @@ export class OrderDetailsComponent implements OnInit {
   token: String;
   books: Array<Book> = [];
   book: Book = new Book();
-  myDatas = new Array();
+  //myDatas = new Array();
   bookcount: number;
+  myDatas = [
+    {
+      bookAddedTime: "2020-06-01T11:22:34",
+      bookApproveStatus: false,
+      bookAuthor: "The Imaginater",
+      bookDescription:
+        "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata",
+      bookId: 3,
+      bookImage:
+        "https://msksaikiran.s3.us-east-2.amazonaws.com/book/Silverstars.jpg",
+      bookName: "SilverStar",
+      bookPrice: 2000,
+      bookUpdatedTime: "2020-06-04T19:19:39",
+      bookVerified: true,
+      noOfBooks: 0,
+      reviewRating: [],
+      sellerName: "Saikiran",
+    },
+  ];
 
   orderId = new Array();
   count: number;

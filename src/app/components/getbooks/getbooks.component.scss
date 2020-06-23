@@ -1,0 +1,81 @@
+.book {
+  flex-direction: row;
+  padding: 15px;
+  padding-top: 34px;
+}
+.bookheader {
+  flex-direction: row;
+  margin-left: 6%;
+  margin-right: 9%;
+  position: relative;
+  flex-wrap: wrap;
+  display: block;
+  align-items: center;
+}
+.sort {
+  text-align: center;
+  font-size: 11px;
+  // width: 161px;
+  // height: 30px;
+  width: 106%;
+  height: 7%;
+  font: Regular 12px/15px Lato;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  border: 1px solid #837070;
+  border-radius: 2px;
+  opacity: 1;
+  margin-right: -4.5px;
+}
+#menu:hover {
+  visibility: visible;
+  transition-delay: 0s;
+}
+div.myMenu {
+  border-radius: 0px;
+  border: 1px solid #e2e2e2;
+  background-color: #ffffff 0% 0% no-repeat padding-box;
+}
+// card fitting to page
+.display-notes {
+  position: relative;
+  flex-wrap: wrap;
+  padding: 10px;
+  display: block;
+  justify-content: center;
+  align-items: flex-start;
+  float: left;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+app-books {
+  padding: 10px, 10px;
+}
+#first {
+  position: relative;
+  display: block;
+}
+.pagenumber {
+  color: #707070;
+  font: Medium 9px/11px Lato;
+  letter-spacing: 0px;
+  background-color: #e4d3d300;
+  margin-left: 10px;
+  margin-right: 25px;
+}
+.footer {
+  margin-top: 4%;
+}
+@media (min-width: 728px) {
+  .bookheader {
+    margin-left: 15%;
+    margin-right: 16%;
+  }
+  .footer {
+    margin-right: 13%;
+  }
+}
+@media (max-width: 414px) {
+  .footer {
+    margin-right: 8%;
+  }
+}

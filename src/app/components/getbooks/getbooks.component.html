@@ -1,0 +1,111 @@
+<mat-card-content>
+  <div fxLayout="row" fxLayoutAlign="space-between center" class="bookheader">
+    <div style="font-size: 100%;" class="books">
+      Books
+      <small style="font-size: 12px;">( 12 itmes)</small>
+    </div>
+    <div>
+      <button
+        class="sort"
+        fxLayout="row"
+        fxLayoutAlign="space-between center"
+        [matMenuTriggerFor]="menu"
+      >
+        <div
+          style="font-size: 11px; padding-bottom: 3%;"
+          (click)="doSorting(sort)"
+        >
+          <label>{{ sort }}</label>
+        </div>
+        <div>
+          <mat-icon style="color: #0a0102; opacity: 0.75;"
+            >expand_more</mat-icon
+          >
+        </div>
+      </button>
+      <mat-menu #menu="matMenu" class="myMenu">
+        <div
+          style="
+            width: 115px;
+            height: auto;
+            text-align: left;
+            padding-left: 8px;
+          "
+        >
+          <div
+            style="font-size: 12px; padding-bottom: 5%;"
+            (click)="doSorting(sortTech1)"
+          >
+            <label>{{ sortTech1 }}</label>
+          </div>
+          <div
+            style="font-size: 12px; padding-bottom: 5%;"
+            (click)="doSorting(sortTech2)"
+          >
+            <label>{{ sortTech2 }}</label>
+          </div>
+          <div
+            style="font-size: 12px; padding-bottom: 5%;"
+            (click)="doSorting(sortTech3)"
+          >
+            <label>{{ sortTech3 }}</label>
+          </div>
+        </div>
+      </mat-menu>
+    </div>
+  </div>
+  <div fxLayout="column" fxLayoutAlign="center center">
+    <div fxLayout="row" class="display-notes">
+      <div *ngFor="let book of bookList" class="book">
+        <app-books [book]="book"></app-books>
+      </div>
+    </div>
+    <div class="paginator" style="padding-top: 20px;">
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <div>
+          <button
+            mat-mini-fab
+            [disabled]="page < 2"
+            (click)="previousPage()"
+            style="
+              border: #e2e2e2;
+              background: #ffffff 0% 0% no-repeat padding-box;
+              color: #0a0102;
+            "
+          >
+            <mat-icon>navigate_before</mat-icon>
+          </button>
+        </div>
+        <div class="pagenumber" fxLayout="row">
+          <div *ngFor="let page of pages">
+            <button mat-icon-button (click)="getAvailableBooksOfPage(page)">
+              {{ page.number }}
+            </button>
+          </div>
+        </div>
+        <div>
+          <button
+            [disabled]="page > endPage"
+            (click)="nextPage()"
+            mat-mini-fab
+            style="
+              border: #e2e2e2;
+              background: #ffffff 0% 0% no-repeat padding-box;
+              color: #0a0102;
+            "
+          >
+            <mat-icon>navigate_next</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <app-footer></app-footer>
+  </div>
+  <!-- <ng-template #foot>
+      <div class="foot" style="top: 720px; margin-top: 45%;">
+        <app-footer></app-footer>
+      </div>
+    </ng-template> -->
+</mat-card-content>

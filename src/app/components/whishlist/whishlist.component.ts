@@ -21,22 +21,24 @@ export class WhishlistComponent implements OnInit {
     this.onwhishlist();
   }
 
-  books: [
+  books = [
     {
-      bookAddedTime: "2020-06-01T11:22:34";
-      bookApproveStatus: false;
-      bookAuthor: "The Imaginater";
-      bookDescription: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata";
-      bookId: 3;
-      bookImage: "https://msksaikiran.s3.us-east-2.amazonaws.com/book/Silverstars.jpg";
-      bookName: "Imaginate update";
-      bookPrice: 2000;
-      bookUpdatedTime: "2020-06-04T19:19:39";
-      bookVerified: true;
-      noOfBooks: 0;
-      reviewRating: [];
-      sellerName: "Saikiran";
-    }
+      bookAddedTime: "2020-06-01T11:22:34",
+      bookApproveStatus: false,
+      bookAuthor: "The Imaginater",
+      bookDescription:
+        "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata",
+      bookId: 3,
+      bookImage:
+        "https://msksaikiran.s3.us-east-2.amazonaws.com/book/Silverstars.jpg",
+      bookName: "SilverStar",
+      bookPrice: 2000,
+      bookUpdatedTime: "2020-06-04T19:19:39",
+      bookVerified: true,
+      noOfBooks: 0,
+      reviewRating: [],
+      sellerName: "Saikiran",
+    },
   ];
 
   addToCart(book: any) {

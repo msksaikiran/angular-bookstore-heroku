@@ -7,6 +7,7 @@ import { ViewcartComponent } from "./components/viewcart/viewcart.component";
 import { OrderSucessComponent } from "./components/order-sucess/order-sucess.component";
 import { WhishlistComponent } from "./components/whishlist/whishlist.component";
 import { OrderDetailsComponent } from "./components/order-details/order-details.component";
+import { GetbooksComponent } from "./components/getbooks/getbooks.component";
 
 const routes: Routes = [
   // {
@@ -56,7 +57,7 @@ const routes: Routes = [
     component: DashboardComponent,
     children: [
       { path: "", redirectTo: "/books", pathMatch: "full" },
-      { path: "books", component: DashboardComponent },
+      { path: "books", component: GetbooksComponent },
       //{ path: "books/search", component: SearchComponent },
       {
         path: "books/viewcart",
