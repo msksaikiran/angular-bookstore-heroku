@@ -46,6 +46,14 @@ export class ViewcartComponent implements OnInit {
   qtofbook: number;
   ngOnInit() {
     this.qtofbook = 1;
+    this.addModel.address = "H.No:11-1-131, HSRLayout,BANGLORE";
+    this.addModel.city = "BANGLORE";
+    this.addModel.landmark = "near Kumarakom";
+    //this.addModel.locality = Response.obj["locality"];
+    this.addModel.name = "SaikiranMsK";
+    this.addModel.phoneNumber = "1234567890";
+    this.addModel.pincode = "503002";
+    //this.addModel.type = Res;
     // this.data.currentMessage.subscribe((message) => {
     //   if ((message = "remove")) {
     //     this.bookNquantityData.splice(0);
