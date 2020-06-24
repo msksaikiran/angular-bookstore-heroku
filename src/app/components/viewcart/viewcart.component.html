@@ -76,21 +76,28 @@
       Customer Details
     </div>
   </mat-card>
-
+  <!--------------------- Form-1 ------------------------>
   <mat-card
     class="matcard1"
     *ngIf="open"
     [ngClass]="open2 == true ? 'matcardincr' : ''"
   >
+    <br />
     <div class="custom">
       Customer Details
     </div>
-    <button *ngIf="!fields" class="editbutton" (click)="onEdit()">
+    <button
+      *ngIf="!fields"
+      class="editbutton"
+      (click)="onEdit()"
+      fxShow="true"
+      fxHide.lt-md="true"
+    >
       <div fxLayout="row" fxLayoutAlign="end start">
         Edit
       </div>
-      <!--------------------- Name ------------------------>
     </button>
+    <!--------------------- Name ------------------------>
     <form [formGroup]="customerForm" (ngSubmit)="(customerForm.valid)">
       <div class="custom" fxShow="true" fxHide.lt-md="true">
         <div
@@ -273,6 +280,21 @@
       </div>
     </form>
     <!------------------------- form2 ------------------>
+    <!-- <div class="custom" fxHide
+    fxShow.lt-md>
+      Customer Details
+    </div> -->
+    <button
+      *ngIf="!fields"
+      class="editbutton"
+      (click)="onEdit()"
+      fxHide
+      fxShow.lt-md
+    >
+      <div fxLayout="row" fxLayoutAlign="end start">
+        Edit
+      </div>
+    </button>
     <form [formGroup]="customerForm" (ngSubmit)="(customerForm.valid)">
       <div class="custom" fxHide fxShow.lt-md>
         <div
@@ -281,7 +303,7 @@
           style="justify-content: flex-start;"
           fxLayoutAlign="flex-start"
         >
-          <!--  -->
+          <!---------------------------- Name ------------------------>
           <mat-form-field appearance="outline" class="input2">
             <mat-label>Name</mat-label>
             <input
