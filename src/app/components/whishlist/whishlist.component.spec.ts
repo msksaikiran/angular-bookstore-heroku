@@ -1,16 +1,15 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { WhishlistComponent } from './whishlist.component';
+import { WhishlistComponent } from "./whishlist.component";
 
-describe('WhishlistComponent', () => {
+xdescribe("WhishlistComponent", () => {
   let component: WhishlistComponent;
   let fixture: ComponentFixture<WhishlistComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WhishlistComponent ]
-    })
-    .compileComponents();
+      declarations: [WhishlistComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +18,7 @@ describe('WhishlistComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

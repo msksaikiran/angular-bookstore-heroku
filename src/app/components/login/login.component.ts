@@ -47,8 +47,7 @@ export class LoginComponent implements OnInit {
     //private http: HttpClient,
     //private httpservice: HttpService,
     //private route: ActivatedRoute,
-    private router: Router,
-    public dialogRef: MatDialogRef<LoginComponent> //private data: DataService
+    private router: Router //public dialogRef: MatDialogRef<LoginComponent> //private data: DataService
   ) {}
 
   ngOnInit() {
@@ -87,16 +86,16 @@ export class LoginComponent implements OnInit {
       this.snackbar.open("Login SuccessFully", "undo", { duration: 2000 });
       if (this.favoriteSeason == "user") {
         localStorage.setItem("token", "dfdsfdgfdgfdgfd");
-        this.dialogRef.close();
+        //this.dialogRef.close();
         this.router.navigate(["books"]);
       }
       if (this.favoriteSeason == "seller") {
         localStorage.setItem("token", "dfdsfdgfdgfdgfd");
-        this.dialogRef.close();
+        //this.dialogRef.close();
         this.router.navigate(["seller/books"]);
       } else if (this.favoriteSeason == "admin") {
         localStorage.setItem("token", "dfdsfdgfdgfdgfd");
-        this.dialogRef.close();
+        //this.dialogRef.close();
 
         this.router.navigate(["admin/books"]);
       }

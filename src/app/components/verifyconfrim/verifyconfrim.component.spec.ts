@@ -1,16 +1,15 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { VerifyconfrimComponent } from './verifyconfrim.component';
+import { VerifyconfrimComponent } from "./verifyconfrim.component";
 
-describe('VerifyconfrimComponent', () => {
+xdescribe("VerifyconfrimComponent", () => {
   let component: VerifyconfrimComponent;
   let fixture: ComponentFixture<VerifyconfrimComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ VerifyconfrimComponent ]
-    })
-    .compileComponents();
+      declarations: [VerifyconfrimComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +18,7 @@ describe('VerifyconfrimComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

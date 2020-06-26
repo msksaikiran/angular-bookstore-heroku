@@ -1,16 +1,15 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { AdmindashboardComponent } from './admindashboard.component';
+import { AdmindashboardComponent } from "./admindashboard.component";
 
-describe('AdmindashboardComponent', () => {
+xdescribe("AdmindashboardComponent", () => {
   let component: AdmindashboardComponent;
   let fixture: ComponentFixture<AdmindashboardComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AdmindashboardComponent ]
-    })
-    .compileComponents();
+      declarations: [AdmindashboardComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +18,7 @@ describe('AdmindashboardComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

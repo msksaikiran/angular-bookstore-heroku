@@ -55,6 +55,8 @@ import { AdmindashboardComponent } from './components/admindashboard/admindashbo
 import { AdminComponent } from './components/admin/admin.component';
 import { DisApproveBooksComponent } from './components/dis-approve-books/dis-approve-books.component';
 import { VerifyconfrimComponent } from './components/verifyconfrim/verifyconfrim.component';
+import { TestComponent } from './components/test/test.component';
+import { Test2Component } from './components/test2/test2.component';
 // import { SearchComponent } from "./components/search/search.component";
 // import { SearchPipe } from "./pipes/search.pipe";
 // import { DashboardComponent } from "./components/dashboard/dashboard.component";
@@ -96,6 +98,8 @@ import { VerifyconfrimComponent } from './components/verifyconfrim/verifyconfrim
     AdminComponent,
     DisApproveBooksComponent,
     VerifyconfrimComponent,
+    TestComponent,
+    Test2Component,
     //RegisterComponent,
     // DashboardComponent,
     // ViewCartComponent,
